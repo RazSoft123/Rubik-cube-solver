@@ -4,8 +4,15 @@ import { scrambleCube } from './../code/Utilities'
 function scramble(dispatch, cube) {
     console.log("Cube getting scrambled");
     const turns = parseInt(document.getElementById('turns').value)
-    let newCube = {...scrambleCube(turns, cube)}
+    let newCube = scrambleCube(turns, cube)
     dispatch({type: "set-cube", payload: newCube})
+}
+
+function turnCube(dispatch) {
+    const turnType = document.getElementById('turn-type').value;
+    console.log("Turn type: ", turnType);
+    dispatch({ type: turnType });
+
 }
 
 export default function Options({ dispatch, state }) {
@@ -18,7 +25,7 @@ export default function Options({ dispatch, state }) {
             </div>
 
             <div className='element-container'>
-                <select className='element' name="" id="">
+                <select className='element' name="" id="turn-type">
                     <option value="up-clock">Up face clockwise</option>
                     <option value="down-clock">Down face clockwise</option>
                     <option value="front-clock">Front face clockwise</option>
@@ -33,7 +40,7 @@ export default function Options({ dispatch, state }) {
                     <option value="left-anti-clock">left face anti clockwise</option>
                 </select>
 
-                <button className='button element'>Turn</button>
+                <button onClick={() => turnCube(dispatch)} className='button element'>Turn</button>
             </div>
 
         </div>
