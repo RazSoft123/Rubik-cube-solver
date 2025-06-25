@@ -1,0 +1,35 @@
+.cube-face {
+    display: grid;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.cell {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: solid  1px black;
+    background-color: #AAA;
+    transition: all 0.2s linear;
+}
+
+.center-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.cell:hover {
+    background-color: #EEE;
+}
+
