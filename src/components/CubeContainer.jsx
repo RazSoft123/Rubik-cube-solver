@@ -1,20 +1,20 @@
 import './CubeContainer.css'
 import CubeFace from './CubeFace'
 
-export default function CubeContainer() {
+export default function CubeContainer({ state }) {
     return (
         <div className="container">
             <div className='face-container'>
-                <CubeFace position="U" />
+                <CubeFace faceArr={state.upFace} position="U" />
             </div>
             <div className='face-container'>
-                <CubeFace position="F" />
-                <CubeFace position="L" />
-                <CubeFace position="B" />
-                <CubeFace position="R" />
+                <CubeFace faceArr={state.frontFace} position="F" />
+                <CubeFace faceArr={state.leftFace} position="L" />
+                <CubeFace faceArr={state.backFace} position="B" />
+                <CubeFace faceArr={state.rightFace} position="R" />
             </div>
             <div className='face-container'>
-                <CubeFace position="D" />
+                <CubeFace faceArr={state.downFace} position="D" />
             </div>
         </div>
     )
