@@ -6,10 +6,10 @@ import RubikCube from './code/RubicCube';
 import { cloneDeepObject } from "./code/Utilities";
 
 function reducer(state, action) {
-  console.log("state", state);
+
+  console.log("reducer get called wit action type: ", action.type);
 
   switch(action.type){
-    
     case 'up-clock':
       state.upClock();
       // return {...state}
@@ -56,7 +56,7 @@ function reducer(state, action) {
       return cloneDeepObject(state);
     
     case 'back-anti-clock' :
-      state.backAntiClok();
+      state.backAntiClock();
       // return {...state}
       return cloneDeepObject(state);
 

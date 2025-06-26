@@ -2,17 +2,15 @@ import './Options.css'
 import { scrambleCube } from './../code/Utilities'
 
 function scramble(dispatch, cube) {
-    console.log("Cube getting scrambled");
     const turns = parseInt(document.getElementById('turns').value)
     let newCube = scrambleCube(turns, cube)
     dispatch({type: "set-cube", payload: newCube})
 }
 
 function turnCube(dispatch) {
+    console.log("Cube is turned");
     const turnType = document.getElementById('turn-type').value;
-    console.log("Turn type: ", turnType);
     dispatch({ type: turnType });
-
 }
 
 export default function Options({ dispatch, state }) {
@@ -42,7 +40,6 @@ export default function Options({ dispatch, state }) {
 
                 <button onClick={() => turnCube(dispatch)} className='button element'>Turn</button>
             </div>
-
         </div>
     )
 }

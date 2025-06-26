@@ -17,7 +17,6 @@ export default class RubikCube {
         this.backFace = ['g','g','g','g','g','g','g','g','g'];
         this.leftFace = ['o','o','o','o','o','o','o','o','o']; 
         this.rightFace = ['r','r','r','r','r','r','r','r','r'];
-        console.log("Rubik cube constructed");
     }
 
     // Implemeting clocwise rotation of the cube.

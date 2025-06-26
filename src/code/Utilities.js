@@ -28,7 +28,6 @@ export function getBackgroundColor(code) {
 }
 
 export function scrambleCube(turns, cube){
-    console.log("Cube is ", cube);
     const moves = ['up-clock', 'down-clock', 'front-clock', 'back-clock', 'right-clock', 'left-clock', 
                     'up-anti-clock', 'down-anti-clock', 'front-anti-clock', 'back-anti-clock', 'right-anti-clock', 'left-anti-clock']
     for(let i = 1; i <= turns; i++) {
@@ -73,7 +72,7 @@ export function scrambleCube(turns, cube){
                 break;
 
             case 'back-anti-clock' :
-                cube.backAntiClok();
+                cube.backAntiClock();
                 break;
 
             case 'right-anti-clock' :
